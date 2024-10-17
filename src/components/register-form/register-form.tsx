@@ -18,7 +18,7 @@ interface RegisterFormProps {
 }
 
 const env = import.meta.env;
-console.log(env.VITE_BASE_URL);
+
 const RegisterForm = ({ setSuccess }: RegisterFormProps) => {
   const [errorMsg, setErrMsg] = useState('');
 
@@ -51,7 +51,6 @@ const RegisterForm = ({ setSuccess }: RegisterFormProps) => {
   // Reset error message when form is changed
   useEffect(() => {
     const { unsubscribe } = watch(() => {
-      console.log('watch');
       setErrMsg('');
     });
     return () => unsubscribe();
